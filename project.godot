@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="lucyFUCKINGrpg1"
+config/name="lucyrpg1"
 run/main_scene="res://node.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
