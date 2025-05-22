@@ -1,1 +1,3 @@
 extends charaResource
+
+class_name playerResource
