@@ -1,0 +1,1 @@
+this file should be deleted later, just testing git plugin with godot
