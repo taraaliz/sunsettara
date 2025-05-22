@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="skillResource" load_steps=2 format=3 uid="uid://cea2ndquel07p"]
 
-[ext_resource type="Script" path="res://attackClass.gd" id="1_mopa5"]
+[ext_resource type="Script" path="res://actions/attackClass.gd" id="1_mopa5"]
 
 [resource]
 script = ExtResource("1_mopa5")
