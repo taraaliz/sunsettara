@@ -1,0 +1,2 @@
+
+var playerTurn : bool = true
