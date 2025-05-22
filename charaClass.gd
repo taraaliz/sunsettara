@@ -23,3 +23,6 @@ enum secondaryBloodTypeEnum {
 func getHpValue():
 	var HpValue : float = sqrt(vitality) * pow(level, 1.0/3.0)
 	return HpValue
+
+
+#FUCKKKKKKKKK
