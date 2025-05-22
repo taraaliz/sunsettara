@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="playerResource" load_steps=2 format=3 uid="uid://dsc1qpxvhm2yb"]
+
+[ext_resource type="Script" path="res://chara/playerClass.gd" id="1_l8bfg"]
+
+[resource]
+script = ExtResource("1_l8bfg")
+fart = true
+level = 0.0
+vitality = 0.0
+strength = 0.0
+magic = 0.0
+speed = 0.0
+defense = 0.0
+primaryBloodType = 0
+secondaryBloodType = 0
+bloodPosNeg = false
