@@ -17,3 +17,4 @@ mono_crash.*.json
 
 # User defined ignores
 /addons
+node.tscn
