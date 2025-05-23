@@ -3,19 +3,21 @@
 [ext_resource type="Script" path="res://chara/stitionClass.gd" id="1_x33ae"]
 [ext_resource type="Script" path="res://actions/skillClass.gd" id="2_r1e1y"]
 [ext_resource type="Resource" uid="uid://cea2ndquel07p" path="res://skills/pyralgia.tres" id="3_85xx7"]
-[ext_resource type="Texture2D" uid="uid://33rsi3llm65k" path="res://icon.svg" id="3_uujiu"]
 [ext_resource type="Resource" uid="uid://b67x20biet2tv" path="res://skills/aqualgia.tres" id="4_pdugt"]
+[ext_resource type="Texture2D" uid="uid://c3rkm5qpo2dh1" path="res://chara/stitions/Power_(Dx2_Art).png" id="5_ldvy6"]
 
 [resource]
 script = ExtResource("1_x33ae")
 bleedResistence = 10.0
-texture = ExtResource("3_uujiu")
+texture = ExtResource("5_ldvy6")
+charaName = "Power"
 level = 5.0
 vitality = 5.0
 strength = 5.0
 magic = 5.0
 speed = 5.0
 defense = 5.0
+currentHP = 0.0
 primaryBloodType = 1
 secondaryBloodType = 3
 bloodPosNeg = false

@@ -5,12 +5,14 @@
 
 [resource]
 script = ExtResource("1_ycn8a")
+charaName = "Lucy"
 level = 5.0
 vitality = 5.0
 strength = 5.0
 magic = 5.0
 speed = 5.0
 defense = 5.0
+currentHP = 0.0
 primaryBloodType = 0
 secondaryBloodType = 0
 bloodPosNeg = false

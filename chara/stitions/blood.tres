@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="stitionResource" load_steps=5 format=3 uid="uid://v6q0tatstsqf"]
+
+[ext_resource type="Script" path="res://chara/stitionClass.gd" id="1_0nb0m"]
+[ext_resource type="Script" path="res://actions/skillClass.gd" id="2_rrdrj"]
+[ext_resource type="Resource" uid="uid://bji6ieyybq5oi" path="res://skills/aeralgia.tres" id="3_ku6nb"]
+[ext_resource type="Texture2D" uid="uid://dw2hqaea5upfv" path="res://chara/stitions/blood.png" id="4_11cuv"]
+
+[resource]
+script = ExtResource("1_0nb0m")
+bleedResistence = 10.0
+texture = ExtResource("4_11cuv")
+charaName = "Blood"
+level = 5.0
+vitality = 5.0
+strength = 5.0
+magic = 5.0
+speed = 5.0
+defense = 5.0
+currentHP = 0.0
+primaryBloodType = 1
+secondaryBloodType = 3
+bloodPosNeg = false
+skillsList = Array[ExtResource("2_rrdrj")]([ExtResource("3_ku6nb")])

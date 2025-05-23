@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="attackResource" load_steps=2 format=3 uid="uid://df7bahsjcv4ay"]
+
+[ext_resource type="Script" path="res://actions/attackClass.gd" id="1_koe1u"]
+
+[resource]
+script = ExtResource("1_koe1u")
+attackPower = 150.0
+affinity = 4
+general = 1
+target = 0
+hpCost = 30.0
+turnCost = 150.0
+Name = "Aqualgia"
+Desc = "Weak single target water move"
