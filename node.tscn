@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://bmslq4ln1ptkj"]
+[gd_scene load_steps=5 format=3 uid="uid://bmslq4ln1ptkj"]
 
-[node name="Node" type="Node"]
+[ext_resource type="Script" path="res://battle/battleScript.gd" id="1_1rjtk"]
+[ext_resource type="Texture2D" uid="uid://33rsi3llm65k" path="res://icon.svg" id="1_o6lxv"]
+[ext_resource type="Script" path="res://battle/enemy.gd" id="3_anmoo"]
+[ext_resource type="Script" path="res://skillsbutton.gd" id="3_lqi0y"]
+
+[node name="battle" type="Node"]
+script = ExtResource("1_1rjtk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 5.0
+offset_top = 419.0
+offset_right = 270.0
+offset_bottom = 643.0
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "skills"
+icon = ExtResource("1_o6lxv")
+alignment = 0
+expand_icon = true
+script = ExtResource("3_lqi0y")
+
+[node name="enemy" type="Node" parent="."]
+script = ExtResource("3_anmoo")

@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="playerResource" load_steps=2 format=3 uid="uid://dsc1qpxvhm2yb"]
+[gd_resource type="Resource" script_class="stitionResource" load_steps=6 format=3 uid="uid://bbt8v51xto1ml"]
 
-[ext_resource type="Script" path="res://chara/playerClass.gd" id="1_l8bfg"]
+[ext_resource type="Script" path="res://chara/stitionClass.gd" id="1_x33ae"]
+[ext_resource type="Script" path="res://actions/skillClass.gd" id="2_r1e1y"]
+[ext_resource type="Resource" uid="uid://cea2ndquel07p" path="res://skills/pyralgia.tres" id="3_85xx7"]
+[ext_resource type="Texture2D" uid="uid://33rsi3llm65k" path="res://icon.svg" id="3_uujiu"]
+[ext_resource type="Resource" uid="uid://b67x20biet2tv" path="res://skills/aqualgia.tres" id="4_pdugt"]
 
 [resource]
-script = ExtResource("1_l8bfg")
-fart = true
-level = 0.0
-vitality = 0.0
-strength = 0.0
-magic = 0.0
-speed = 0.0
-defense = 0.0
-primaryBloodType = 0
-secondaryBloodType = 0
+script = ExtResource("1_x33ae")
+bleedResistence = 10.0
+texture = ExtResource("3_uujiu")
+level = 5.0
+vitality = 5.0
+strength = 5.0
+magic = 5.0
+speed = 5.0
+defense = 5.0
+primaryBloodType = 1
+secondaryBloodType = 3
 bloodPosNeg = false
+skillsList = Array[ExtResource("2_r1e1y")]([ExtResource("3_85xx7"), ExtResource("4_pdugt")])

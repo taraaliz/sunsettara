@@ -17,9 +17,11 @@ enum primaryBloodTypeEnum {
 }
 
 enum secondaryBloodTypeEnum {
-	A, B, C, D,
+	B, C, D, nada
 }
 
 func getHpValue():
 	var HpValue : float = sqrt(vitality) * pow(level, 1.0/3.0)
 	return HpValue
+
+@export var skillsList : Array[skillResource]

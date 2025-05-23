@@ -1,16 +1,17 @@
-[gd_resource type="Resource" script_class="playerResource" load_steps=2 format=3 uid="uid://cujhcvet6yv8h"]
+[gd_resource type="Resource" script_class="playerResource" load_steps=3 format=3 uid="uid://cujhcvet6yv8h"]
 
 [ext_resource type="Script" path="res://chara/playerClass.gd" id="1_ycn8a"]
+[ext_resource type="Script" path="res://actions/skillClass.gd" id="2_5tghu"]
 
 [resource]
 script = ExtResource("1_ycn8a")
-fart = true
-level = 0.0
-vitality = 0.0
-strength = 0.0
-magic = 0.0
-speed = 0.0
-defense = 0.0
+level = 5.0
+vitality = 5.0
+strength = 5.0
+magic = 5.0
+speed = 5.0
+defense = 5.0
 primaryBloodType = 0
 secondaryBloodType = 0
 bloodPosNeg = false
+skillsList = Array[ExtResource("2_5tghu")]([])
