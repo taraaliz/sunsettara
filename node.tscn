@@ -1,47 +1,126 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmslq4ln1ptkj"]
+[gd_scene load_steps=10 format=3 uid="uid://bmslq4ln1ptkj"]
 
+[ext_resource type="Script" path="res://battle/battlesystem.gd" id="1_e28i4"]
+[ext_resource type="Resource" uid="uid://b1wohjv8h7luv" path="res://encounters/testencounter1.tres" id="2_ew7i2"]
 [ext_resource type="Texture2D" uid="uid://dw2hqaea5upfv" path="res://chara/stitions/blood.png" id="2_sewhm"]
-[ext_resource type="Script" path="res://battle/enemy.gd" id="3_anmoo"]
+[ext_resource type="Texture2D" uid="uid://c1qsjctbcqxym" path="res://chara/stitions/yellow bile.png" id="3_umkjb"]
+[ext_resource type="AudioStream" uid="uid://dekuev1xv71hb" path="res://music/lucy blood battle.mp3" id="4_1qtlp"]
+[ext_resource type="Texture2D" uid="uid://c0t33a2d2f2pu" path="res://turnclock empty.png" id="6_3jkki"]
+[ext_resource type="Script" path="res://skillsMenu.gd" id="6_h8fhm"]
+[ext_resource type="Resource" uid="uid://cea2ndquel07p" path="res://skills/pyralgia.tres" id="7_3bryu"]
+[ext_resource type="Texture2D" uid="uid://bp7w3wikcbn73" path="res://turnclock full.png" id="7_eerap"]
 
 [node name="battle" type="Node"]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_top = 349.0
-offset_right = 627.0
-offset_bottom = 648.0
-
-[node name="player adr" type="ProgressBar" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="player hp" type="ProgressBar" parent="VBoxContainer"]
-layout_mode = 2
-value = 100.0
-
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "skills"
-alignment = 0
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "skills"
-alignment = 0
-
-[node name="Button3" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "skills"
-alignment = 0
-
-[node name="enemy" type="Node" parent="."]
-script = ExtResource("3_anmoo")
+script = ExtResource("1_e28i4")
+playerArray = ExtResource("2_ew7i2")
 
 [node name="Blood" type="Sprite2D" parent="."]
 position = Vector2(820, 199)
 scale = Vector2(1.80055, 1.85119)
 texture = ExtResource("2_sewhm")
+
+[node name="YellowBile" type="Sprite2D" parent="."]
+position = Vector2(1006, 275)
+scale = Vector2(1.97549, 1.97549)
+texture = ExtResource("3_umkjb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_1qtlp")
+autoplay = true
+parameters/looping = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_top = 328.0
+offset_right = 771.0
+offset_bottom = 648.0
+
+[node name="TabContainer" type="TabContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="skills" type="ScrollContainer" parent="Control/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/TabContainer/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("6_h8fhm")
+fuck = ExtResource("7_3bryu")
+
+[node name="HSeparator2" type="HSeparator" parent="Control/VBoxContainer/TabContainer/skills/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer/TabContainer/skills/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer/TabContainer/skills/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MenuButton" type="MenuButton" parent="Control/VBoxContainer/TabContainer/skills/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Blood Rush"
+alignment = 0
+item_count = 2
+popup/item_0/text = "blood"
+popup/item_0/id = 0
+popup/item_1/text = "yellow bile"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/TabContainer/skills/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "40% ADR | 14s"
+horizontal_alignment = 1
+
+[node name="inventory" type="Control" parent="Control/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="party" type="Control" parent="Control/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="misc" type="Control" parent="Control/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+value = 20.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+value = 70.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 14.0
+fill_mode = 4
+texture_under = ExtResource("6_3jkki")
+texture_progress = ExtResource("7_eerap")

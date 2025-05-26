@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="partyResource" load_steps=4 format=3 uid="uid://b1wohjv8h7luv"]
+
+[ext_resource type="Script" path="res://chara/charaClass.gd" id="1_3oduv"]
+[ext_resource type="Resource" uid="uid://cujhcvet6yv8h" path="res://chara/players/lucy.tres" id="2_244uo"]
+[ext_resource type="Script" path="res://battle/partyResource.gd" id="2_vc6ag"]
+
+[resource]
+script = ExtResource("2_vc6ag")
+party = Array[ExtResource("1_3oduv")]([ExtResource("2_244uo")])

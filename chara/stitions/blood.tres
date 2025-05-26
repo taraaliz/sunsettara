@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_0nb0m")
-bleedResistence = 10.0
+bleedResistence = 0.0
 texture = ExtResource("4_11cuv")
 charaName = "Blood"
 level = 5.0
