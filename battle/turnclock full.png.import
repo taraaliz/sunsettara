@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3rkm5qpo2dh1"
-path="res://.godot/imported/Power_(Dx2_Art).png-fea59bc85732fa815f20f58deea2b7a3.ctex"
+uid="uid://bp7w3wikcbn73"
+path="res://.godot/imported/turnclock full.png-3dc6e15baf1e32429cef2fc57441943d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chara/stitions/Power_(Dx2_Art).png"
-dest_files=["res://.godot/imported/Power_(Dx2_Art).png-fea59bc85732fa815f20f58deea2b7a3.ctex"]
+source_file="res://battle/turnclock full.png"
+dest_files=["res://.godot/imported/turnclock full.png-3dc6e15baf1e32429cef2fc57441943d.ctex"]
 
 [params]
 

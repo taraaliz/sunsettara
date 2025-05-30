@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp7w3wikcbn73"
-path="res://.godot/imported/turnclock full.png-9ae703c3da8a6263a07997c0a7262af1.ctex"
+uid="uid://c0t33a2d2f2pu"
+path="res://.godot/imported/turnclock empty.png-621b7b17fd9d3b90374d1c959a3214b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://turnclock full.png"
-dest_files=["res://.godot/imported/turnclock full.png-9ae703c3da8a6263a07997c0a7262af1.ctex"]
+source_file="res://battle/turnclock empty.png"
+dest_files=["res://.godot/imported/turnclock empty.png-621b7b17fd9d3b90374d1c959a3214b9.ctex"]
 
 [params]
 

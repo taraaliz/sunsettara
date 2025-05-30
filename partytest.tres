@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="partyResource" load_steps=4 format=3 uid="uid://cfjftpnsgi7mi"]
+
+[ext_resource type="Script" uid="uid://rp7j6kyvqps0" path="res://chara/scripts/charaClass.gd" id="1_gu1fr"]
+[ext_resource type="Resource" uid="uid://cujhcvet6yv8h" path="res://chara/players/lucy.tres" id="2_rejkw"]
+[ext_resource type="Script" uid="uid://c8jqkjrxy6oss" path="res://chara/scripts/partyResource.gd" id="2_ynonl"]
+
+[resource]
+script = ExtResource("2_ynonl")
+party = Array[ExtResource("1_gu1fr")]([ExtResource("2_rejkw"), null])
+metadata/_custom_type_script = "uid://c8jqkjrxy6oss"

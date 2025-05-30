@@ -1,5 +1,5 @@
 extends Resource
 class_name actionResource
 
-@export var Name : String
-@export var Desc : String
+@export var action_name : String
+@export var action_desc : String

@@ -7,17 +7,26 @@ class_name BattleSystemResource
 
 @export var playerTurn : bool = true
 
-@export var currentDealer: charaResource
+var currentDealer: charaResource
 @export var targetCharacter: charaResource
 
+@export var turn : int
 
+func playerTurnOrNot():
+	if playerArray.Party > turn:
+		playerTurn = false
+
+
+func getCurrentDealer():
+	var currentDealer = playerArray.party[turn]
+	return currentDealer
 
 func _ready():
 	playerTurn = true
 	if playerTurn == true:
 		currentDealer = playerArray.party[0]
 	print(currentDealer.charaName)
-	$%AudioStreamPlayer.play
+
 
 
 func getSkillOutcome(selectedSkill : skillResource):

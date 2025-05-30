@@ -1,0 +1,218 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmslq4ln1ptkj"]
+
+[ext_resource type="Script" uid="uid://b7jkv8r74xgpc" path="res://battle/scripts/battlesystem.gd" id="1_ppyta"]
+[ext_resource type="Resource" uid="uid://cujhcvet6yv8h" path="res://chara/players/lucy.tres" id="3_g14j6"]
+[ext_resource type="Script" uid="uid://b8np5ljun1o40" path="res://skill_list.gd" id="6_g14j6"]
+[ext_resource type="PackedScene" uid="uid://c8w6ferowvir8" path="res://prefabs/skill_template.tscn" id="6_vbegm"]
+[ext_resource type="Texture2D" uid="uid://dw2hqaea5upfv" path="res://chara/stitions/blood.png" id="8_xersf"]
+[ext_resource type="Texture2D" uid="uid://c1qsjctbcqxym" path="res://chara/stitions/yellow bile.png" id="9_00tp4"]
+[ext_resource type="Script" uid="uid://ce04njhqviqav" path="res://player_list.gd" id="9_77dp3"]
+[ext_resource type="AudioStream" uid="uid://cyh6jopic34pi" path="res://music/angel again game version.mp3" id="9_xersf"]
+[ext_resource type="Resource" uid="uid://cfjftpnsgi7mi" path="res://partytest.tres" id="10_5tkv4"]
+[ext_resource type="Resource" uid="uid://veub5y85k1kn" path="res://enemytest.tres" id="11_0m0f1"]
+[ext_resource type="PackedScene" uid="uid://oxdraxay3myq" path="res://prefabs/member_template.tscn" id="12_0m0f1"]
+[ext_resource type="Script" uid="uid://j2yryjduw7ho" path="res://enemy_list.gd" id="12_b0q6j"]
+
+[sub_resource type="Theme" id="Theme_ehkex"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g14j6"]
+size = Vector3(1, 1, 5.6377)
+
+[node name="battle" type="Node"]
+script = ExtResource("1_ppyta")
+playerArray = ExtResource("10_5tkv4")
+
+[node name="Blood" type="Sprite2D" parent="."]
+position = Vector2(428.518, 276)
+scale = Vector2(1.53571, 1.53571)
+texture = ExtResource("8_xersf")
+
+[node name="YellowBile" type="Sprite2D" parent="."]
+position = Vector2(740.518, 291)
+scale = Vector2(1.5915, 1.5915)
+texture = ExtResource("9_00tp4")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_top = 0.55
+anchor_right = 0.73
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+current_tab = 0
+
+[node name="Skills" type="ScrollContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="SkillList" type="VBoxContainer" parent="Panel/TabContainer/Skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("6_g14j6")
+character = ExtResource("3_g14j6")
+skill_template = ExtResource("6_vbegm")
+
+[node name="Skill" parent="Panel/TabContainer/Skills/SkillList" instance=ExtResource("6_vbegm")]
+layout_mode = 2
+
+[node name="Items" type="ScrollContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ItemList" type="VBoxContainer" parent="Panel/TabContainer/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="Control" parent="Panel/TabContainer/Items/ItemList"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Items/ItemList/Item"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemName" type="Button" parent="Panel/TabContainer/Items/ItemList/Item/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Items/ItemList/Item/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ehkex")
+
+[node name="ItemAmount" type="Label" parent="Panel/TabContainer/Items/ItemList/Item/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Party" type="ScrollContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/Party"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlayerList" type="VBoxContainer" parent="Panel/TabContainer/Party/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_77dp3")
+party = ExtResource("10_5tkv4")
+member_template = ExtResource("12_0m0f1")
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Party/HBoxContainer2"]
+layout_mode = 2
+
+[node name="EnemyList" type="VBoxContainer" parent="Panel/TabContainer/Party/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("12_b0q6j")
+enemy_party = ExtResource("11_0m0f1")
+member_template = ExtResource("12_0m0f1")
+
+[node name="Misc" type="ScrollContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Misc List" type="VBoxContainer" parent="Panel/TabContainer/Misc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pass" type="Control" parent="Panel/TabContainer/Misc/Misc List"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Misc/Misc List/Pass"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PassName" type="Button" parent="Panel/TabContainer/Misc/Misc List/Pass/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pass"
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Misc/Misc List/Pass/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ehkex")
+
+[node name="Seconds" type="Label" parent="Panel/TabContainer/Misc/Misc List/Pass/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "5s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="End Turn" type="Control" parent="Panel/TabContainer/Misc/Misc List"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Misc/Misc List/End Turn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="End Turn Name" type="Button" parent="Panel/TabContainer/Misc/Misc List/End Turn/HBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "End Turn"
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Misc/Misc List/End Turn/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ehkex")
+
+[node name="Seconds" type="Label" parent="Panel/TabContainer/Misc/Misc List/End Turn/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "0s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.31885)
+shape = SubResource("BoxShape3D_g14j6")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28654, 1.15606)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_xersf")
+pitch_scale = 0.99
+autoplay = true
+parameters/looping = true
